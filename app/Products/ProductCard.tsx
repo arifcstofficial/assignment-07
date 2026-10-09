@@ -18,7 +18,7 @@ const ProductCard = ({ item }: { item: PriceIncreasedType }) => {
             
             <div className="flex items-center gap-3 lg:gap-5">
                 <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[#f0f5f0] text-3xl lg:size-[72px] lg:text-4xl">
-                    {item.categoryIcon}
+                    {item.image}
                 </div>
                 <div className="min-w-0">
                     <h3 className="truncate text-lg font-bold text-[#1c2b1c] lg:text-2xl">

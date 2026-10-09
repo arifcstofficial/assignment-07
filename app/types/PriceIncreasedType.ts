@@ -1,6 +1,6 @@
 export interface PriceIncreasedType{   
     id: string,
-    categoryIcon:string,
+    image:string,
     nameBn: string,
     today:number,
     change: {

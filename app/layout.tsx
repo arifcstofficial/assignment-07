@@ -4,6 +4,7 @@ import "./globals.css";
 import HeaderPage from "./components/HeaderPage";
 import NavBarPage from "./components/NavBar";
 import ScrollBar from "./components/ScrollBar";
+import FooterPage from "./components/Footer";
 
 
 const banglaFont=Hind_Siliguri({
@@ -31,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main>
            {children}
         </main>
-       
+        <FooterPage></FooterPage>
         </body>
     </html>
   );
