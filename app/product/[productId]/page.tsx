@@ -1,6 +1,7 @@
 import AveragePricePage from '@/app/Products/AveragePrice';
 import HighestPricePage from '@/app/Products/HighestPrice';
 import LowestPricePage from '@/app/Products/LowestPrice';
+import ProductTablePage from '@/app/Products/ProductTable';
 import { ProductDetailsType } from '@/app/types/ProductDetailsType';
 import React, { Suspense } from 'react';
 
@@ -25,6 +26,8 @@ async function ProductContents({ params }: Props) {
     console.log(data);
     return (
         <div>
+
+
             <div className="mt-6 bg-white rounded-xl">
                 <div className="flex justify-between p-8 items-center">
                     <div className="flex gap-4">
@@ -47,9 +50,11 @@ async function ProductContents({ params }: Props) {
                 </div>
             </div>
 
+
+
             <div>
                 <div>
-                    <p className="font-bold text-4xl mt-10">দামের সারসংক্ষেপ</p>
+                    <p className="font-bold text-3xl mt-10">দামের সারসংক্ষেপ</p>
                          
                         
                     <div className="grid grid-cols-3  mt-6 gap-5 px-4"> 
@@ -75,8 +80,13 @@ async function ProductContents({ params }: Props) {
                 </div>
             </div>
 
-
+        <div>
+             <p className="font-bold text-3xl mt-7">বাজারভিত্তিক আজকের দাম</p>
+             <ProductTablePage data={data}></ProductTablePage>
         </div>
+
+       
+    </div>
     
 
     )

@@ -26,9 +26,9 @@ const HeroSectionPage = () => {
                     <p className="py-5 lg:py-6 text-xs sm:text-sm lg:text-base line-clamp-3 sm:line-clamp-none">
                         চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।
                     </p>
-                    <button className="btn btn-sm lg:btn-md bg-green-600 text-white">
-                        সব পণ্য দেখুন
-                    </button>
+                    
+                       <a className="btn btn-sm lg:btn-md bg-green-600 text-white" href='#সব-পণ্য'>সব পণ্য দেখুন</a> 
+                    
                 </div>
             </div>
         </div>
