@@ -1,0 +1,27 @@
+
+import { cacheLife } from 'next/cache';
+import React from 'react';
+import { PriceIncreasedType } from '../types/PriceIncreasedType';
+import ProductCard from '../Products/ProductCard';
+
+const PriceDecreased = async() => {
+     "use cache";
+    cacheLife("hours");
+    const resData=await fetch("https://api.api-store.workers.dev/api/bazardor/products");
+    const data: PriceIncreasedType[]=await resData.json();
+    const filteredData=data.filter((item)=>item.change.dir==="down").sort((a,b)=>(a.change.pct-b.change.pct)).slice(0,6);
+
+    return (
+        <div>
+            <h1 className="pt-4 pb:3 lg:pt-8 lg:pb-4"><span className="text-green-600 text-4xl">▼</span> <span className="text-4xl font-bold text-4xl">আজ দাম কমেছে</span></h1>
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+
+            {filteredData.map((item)=> <ProductCard key={item.id} item={item}/>)}
+                         
+        </div>
+        </div>
+        
+    );
+};
+
+export default PriceDecreased;
