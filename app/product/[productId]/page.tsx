@@ -4,6 +4,7 @@ import LowestPricePage from '@/app/Products/LowestPrice';
 import ProductTablePage from '@/app/Products/ProductTable';
 import { ProductDetailsType } from '@/app/types/ProductDetailsType';
 import React, { Suspense } from 'react';
+import { requireSession } from "@/app/lib/session";
 
 type Props = {
     params: Promise<{ productId: string }>;
@@ -20,6 +21,7 @@ const ProductDetailsPage = ({ params }: Props) => {
 };
 
 async function ProductContents({ params }: Props) {
+     await requireSession(); 
     const { productId } = await params;
     const resData = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productId}`);
     const data: ProductDetailsType = await resData.json();

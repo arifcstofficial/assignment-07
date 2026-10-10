@@ -1,3 +1,4 @@
+import { requireSession } from '@/app/lib/session';
 import { ProductDetailsType } from '@/app/types/ProductDetailsType';
 import React, { Suspense } from 'react';
 
@@ -66,6 +67,7 @@ function ShowCard({ item }: { item: ProductDetailsType }) {
 }
 
 async function ProductContents({ params }: { params: Promise<{ category: string }> }) {
+     await requireSession(); 
     const { category } = await params;
 
     const resData = await fetch(

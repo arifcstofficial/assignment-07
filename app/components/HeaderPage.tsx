@@ -16,7 +16,7 @@ const HeaderPage = () => {
         <div className="flex justify-between p-2 md:p-3 lg:p-4">
             <div className="flex gap-2">
                 <div>
-                    <Image src="/logo.png" alt="logo image" width={500} height={500} className="w-10 h-auto md:w-12 lg:w-[50px]" />
+                    <Link href="/"><Image src="/logo.png" alt="logo image" width={500} height={500} className="w-10 h-auto md:w-12 lg:w-[50px]" /></Link>
                 </div>
                 <div>
                     <div className="font-bold text-base md:text-lg lg:text-xl ">

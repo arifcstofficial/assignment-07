@@ -3,12 +3,13 @@ import { cacheLife } from "next/cache";
 import { Suspense } from "react";
 import { NavBarCategories } from "../types/NavBarCategories";
 import NavBarLinks from "./NavBarLinks";
+import { requireSession } from "../lib/session";
 
 const NavBarPage = async () => {
     "use cache";
 
     cacheLife("hours");
-
+   
     const resData = await fetch(
         "https://api.abcz.workers.dev/api/bazardor/categories"
     );
