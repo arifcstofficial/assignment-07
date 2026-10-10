@@ -1,19 +1,35 @@
-import { cacheLife } from 'next/cache';
-import React from 'react';
-import { NavBarCategories } from '../types/NavBarCategories';
 
-const NavBarPage = async() => {
+import { cacheLife } from "next/cache";
+import { Suspense } from "react";
+import { NavBarCategories } from "../types/NavBarCategories";
+import NavBarLinks from "./NavBarLinks";
+
+const NavBarPage = async () => {
     "use cache";
+
     cacheLife("hours");
-    const resData=await fetch("https://api.api-store.workers.dev/api/bazardor/categories");
-    const navData:NavBarCategories[]=await resData.json();
-    
+
+    const resData = await fetch(
+        "https://api.abcz.workers.dev/api/bazardor/categories"
+    );
+
+    if (!resData.ok) {
+        throw new Error("Failed to fetch navbar categories");
+    }
+
+    const navData: NavBarCategories[] = await resData.json();
+    console.log("Navigation data", navData);
+
     return (
-        <div className="flex justify-start mt-5 text-sm md:text-base px-6 gap-6">
-              {
-                navData.map((data,ind)=>(<div key={ind} > <span>{data.icon}</span><span>  {data.nameBn}</span> </div>))
-              }
-        </div>
+        <Suspense
+            fallback={
+                <div className="mt-5 px-6 text-sm md:text-base">
+                    Loading categories...
+                </div>
+            }
+        >
+            <NavBarLinks navData={navData} />
+        </Suspense>
     );
 };
 

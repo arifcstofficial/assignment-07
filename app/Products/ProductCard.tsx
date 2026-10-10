@@ -1,8 +1,8 @@
 import React from "react";
 
-import { PriceIncreasedType } from "../types/PriceIncreasedType";
+import { ProductDetailsType } from "../types/ProductDetailsType";
 
-type Direction = PriceIncreasedType["change"]["dir"];
+type Direction = ProductDetailsType["change"]["dir"];
 
 const changeStyle: Record<Direction, { symbol: string; text: string }> = {
     up: { symbol: "▲", text: "text-red-600" },
@@ -10,7 +10,7 @@ const changeStyle: Record<Direction, { symbol: string; text: string }> = {
     flat: { symbol: "–", text: "text-gray-500" },
 };
 
-const ProductCard = ({ item }: { item: PriceIncreasedType }) => {
+const ProductCard = ({ item }: { item: ProductDetailsType }) => {
     const { symbol, text } = changeStyle[item.change.dir];
 
     return (

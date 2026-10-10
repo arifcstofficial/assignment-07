@@ -2,13 +2,16 @@
 import { signOut, updateUser, useSession } from '@/app/lib/auth-client';
 import { TextField, Button, FieldError, FieldGroup, Fieldset, Form, Input, Label, toast } from '@heroui/react';
 import React from 'react';
+import { useRouter } from "next/navigation";
 
 const ProfileUpdatePage = () => {
     const { data: session } = useSession();
-
+    const router = useRouter();
+    
     const handleSignOut = async () => {
         await signOut();
-        window.location.reload();
+        router.push("/");
+       router.refresh()
     }
    
 

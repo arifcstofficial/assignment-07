@@ -9,7 +9,7 @@ import Link from 'next/link';
 const ScrollBar = async () => {
     "use cache"
     cacheLife("hours");
-    const resData = await fetch("https://api.api-store.workers.dev/api/bazardor/products");
+    const resData = await fetch("https://api.abcz.workers.dev/api/bazardor/products");
     const scrolledData: ScrollBarType[] = await resData.json();
 
     return (

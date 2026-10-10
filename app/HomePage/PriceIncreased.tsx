@@ -8,7 +8,7 @@ import Link from 'next/link';
 const PriceIncreased = async() => {
      "use cache";
     cacheLife("hours");
-    const resData=await fetch("https://api.api-store.workers.dev/api/bazardor/products");
+    const resData=await fetch("https://api.abcz.workers.dev/api/bazardor/products");
     const data: PriceIncreasedType[]=await resData.json();
     const filteredData=data.filter((item)=>item.change.dir==="up").sort((a,b)=>(b.change.pct-a.change.pct)).slice(0,6);
 

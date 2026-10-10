@@ -21,7 +21,7 @@ const ProductDetailsPage = ({ params }: Props) => {
 
 async function ProductContents({ params }: Props) {
     const { productId } = await params;
-    const resData = await fetch(`https://api.api-store.workers.dev/api/bazardor/products/${productId}`);
+    const resData = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productId}`);
     const data: ProductDetailsType = await resData.json();
     console.log(data);
     return (
