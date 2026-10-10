@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {Hind_Siliguri } from "next/font/google";
+import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import HeaderPage from "./components/HeaderPage";
 import NavBarPage from "./components/NavBar";
@@ -8,9 +8,9 @@ import FooterPage from "./components/Footer";
 import { Toast } from "@heroui/react";
 
 
-const banglaFont=Hind_Siliguri({
-  subsets:["latin","bengali"],
-   weight: ["400", "500", "600", "700"],
+const banglaFont = Hind_Siliguri({
+  subsets: ["latin", "bengali"],
+  weight: ["400", "500", "600", "700"],
 })
 
 
@@ -27,15 +27,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${banglaFont.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col w-[calc(100%-2rem)] md:w-[calc(100%-3rem)] lg:w-6xl mx-auto mt-2 md:mt-4 lg:mt-5 p-2 md:p-4 lg:p-5 bg-[#ebf2eb] rounded-2xl">
-       <Toast.Provider />
+        <Toast.Provider placement="top end" />
         <HeaderPage></HeaderPage>
         <NavBarPage></NavBarPage>
         <ScrollBar></ScrollBar>
         <main>
-           {children}
+          {children}
         </main>
         <FooterPage></FooterPage>
-        </body>
+      </body>
     </html>
   );
 }
