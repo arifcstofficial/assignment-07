@@ -5,6 +5,7 @@ import HeaderPage from "./components/HeaderPage";
 import NavBarPage from "./components/NavBar";
 import ScrollBar from "./components/ScrollBar";
 import FooterPage from "./components/Footer";
+import { Toast } from "@heroui/react";
 
 
 const banglaFont=Hind_Siliguri({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${banglaFont.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col w-[calc(100%-2rem)] md:w-[calc(100%-3rem)] lg:w-6xl mx-auto mt-2 md:mt-4 lg:mt-5 p-2 md:p-4 lg:p-5 bg-[#ebf2eb] rounded-2xl">
+       <Toast.Provider />
         <HeaderPage></HeaderPage>
         <NavBarPage></NavBarPage>
         <ScrollBar></ScrollBar>
