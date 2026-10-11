@@ -12,8 +12,8 @@ const LowestPricePage = ({data}:LowestPricePageProps) => {
     return (
         
         <div>
-            <p className='text-green-700 text-4xl font-bold'>{lowest[0].min.toLocaleString("bn-BD")}<span className="text-xl"> টাকা </span> </p>
-            <p> সবচেয়ে কম দামের বাজারঃ <span className="text-[#506aeb]">{lowest[0].market}</span> <span>, </span>{lowest[0].division}</p>
+            <p className='text-green-700 text-3xl sm:text-4xl font-bold'>{lowest[0].min.toLocaleString("bn-BD")}<span className="text-lg sm:text-xl"> টাকা </span> </p>
+            <p className="break-words"> সবচেয়ে কম দামের বাজারঃ <span className="text-[#506aeb]">{lowest[0].market}</span> <span>, </span>{lowest[0].division}</p>
         </div>
     );
 };

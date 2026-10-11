@@ -1,4 +1,3 @@
-
 import { cacheLife } from "next/cache";
 import { Suspense } from "react";
 import { NavBarCategories } from "../types/NavBarCategories";
@@ -19,12 +18,12 @@ const NavBarPage = async () => {
     }
 
     const navData: NavBarCategories[] = await resData.json();
-    console.log("Navigation data", navData);
+  
 
     return (
         <Suspense
             fallback={
-                <div className="mt-5 px-6 text-sm md:text-base">
+                <div className="mt-3 px-4 text-sm sm:mt-5 sm:px-6 md:text-base">
                     Loading categories...
                 </div>
             }

@@ -15,7 +15,7 @@ const ProductCard = ({ item }: { item: ProductDetailsType }) => {
 
     return (
         <div className="w-full rounded-3xl border border-[#e3e9e3] bg-[#f9fbf9] p-4 lg:p-6">
-            
+
             <div className="flex items-center gap-3 lg:gap-5">
                 <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-[#f0f5f0] text-3xl lg:size-[72px] lg:text-4xl">
                     {item.image}
@@ -24,11 +24,22 @@ const ProductCard = ({ item }: { item: ProductDetailsType }) => {
                     <h3 className="truncate text-lg font-bold text-[#1c2b1c] lg:text-2xl">
                         {item.nameBn}
                     </h3>
-                    <p className="text-sm text-[#3d4a3d] lg:text-base">প্রতি কেজি</p>
+
+                    <p className="text-sm text-[#3d4a3d] lg:text-base">
+                        প্রতি{" "}
+                        {item.unit === "kg"
+                            ? "কেজি"
+                            : item.unit === "litre"
+                                ? "লিটার"
+                                : item.unit === "dozen"
+                                    ? "ডজন"
+                                    : "পিস"}{" "}
+                        
+                    </p>
                 </div>
             </div>
 
-           
+
             <div className="mt-4 flex items-end justify-between gap-2 lg:mt-6">
                 <div>
                     <p className="text-sm text-[#3d4a3d] lg:text-base">আজকের দাম</p>

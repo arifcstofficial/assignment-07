@@ -40,17 +40,17 @@ export default function SignInPage() {
 
     return (
 
-        <div className="my-10 grid grid-cols-1 justify-items-center">
-            <div>
-                <p className="font-bold text-4xl">
+        <div className="my-6 px-4 md:my-10 grid grid-cols-1 justify-items-center">
+            <div className="max-w-full">
+                <p className="font-bold text-3xl sm:text-4xl">
                     সাইন ইন
                 </p>
                 <p className="text-slate-800 mb-8">
                     বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
                 </p>
             </div>
-            <div className="bg-white p-6 rounded-lg">
-                <Form className="flex w-96 flex-col gap-4" onSubmit={buttonSubmitHandler}>
+            <div className="bg-white p-4 sm:p-6 rounded-lg w-full sm:w-auto max-w-full">
+                <Form className="flex w-full sm:w-96 flex-col gap-4" onSubmit={buttonSubmitHandler}>
 
                     <TextField
                         isRequired
@@ -71,7 +71,7 @@ export default function SignInPage() {
                         type="password"
                        
                     >
-                        <Label>পাসওয়ার্ড</Label>
+                        <Label>পাসওয়ার্ড</Label>
                         <Input placeholder="কমপক্ষে ৮ অক্ষর" />
                         <FieldError />
                     </TextField>
@@ -87,11 +87,11 @@ export default function SignInPage() {
                     <div className="divider">অথবা</div>
                 </div>
 
-                <div className="flex justify-evenly">
+                <div className="flex flex-col gap-3 sm:flex-row sm:gap-0 sm:justify-evenly">
                     <Button onClick={handleGoogleSignIn} className="bg-[#cdc6c6] text-black " >Google দিয়ে চালিয়ে যান</Button>
                     <Button onClick={handleGithubSignIn} className="bg-[#f7d1d1] text-black">GitHub দিয়ে চালিয়ে যান</Button>
                 </div>
-                <div className="flex justify-center pt-4 gap-4">
+                <div className="flex flex-wrap justify-center pt-4 gap-2 sm:gap-4">
                     <span>অ্যাকাউন্ট নেই?</span>  <Link href="/sign-up" className="hover:underline hover:text-blue-500">সাইন আপ করুন</Link>
                 </div>
             </div>

@@ -36,17 +36,17 @@ const ProfileUpdatePage = () => {
     };
 
     return (
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-6 px-4 md:mt-10 md:px-6">
 
-            <div className="bg-white rounded-lg p-5" >
+            <div className="bg-white rounded-lg p-4 w-full sm:w-auto sm:p-5" >
                 <div className="mb-8 bg-[#ebcccc] rounded-2xl p-3">
-                    <h1 className="font-bold text-3xl ">আমার প্রোফাইল</h1>
+                    <h1 className="font-bold text-2xl sm:text-3xl ">আমার প্রোফাইল</h1>
                     <p>আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
                 </div>
-                <div className="flex gap-35 mb-8 bg-[#ebcccc] rounded-2xl p-3">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-10 lg:gap-35 mb-8 bg-[#ebcccc] rounded-2xl p-3">
                     <div>
-                        <p className="font-bold text-lg"><span>নামঃ </span>{session?.user.name}</p>
-                        <p><span>ইমেইলঃ </span>{session?.user.email}</p>
+                        <p className="font-bold text-lg break-words"><span>নামঃ </span>{session?.user.name}</p>
+                        <p className="break-words"><span>ইমেইলঃ </span>{session?.user.email}</p>
                     </div>
                     <div>
                         <Button onClick={handleSignOut}> ↩ সাইন আউট</Button>

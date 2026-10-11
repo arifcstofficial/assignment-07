@@ -26,7 +26,7 @@ export default function SignUpPage() {
             };
 
             if (data.password != data.confirmPassword) {
-                return toast.danger("পাসওয়ার্ড মিলছে না");
+                return toast.danger("পাসওয়ার্ড মিলছে না");
             }
             else {
                 const { data: resData, error } = await signUp.email({
@@ -44,17 +44,17 @@ export default function SignUpPage() {
 
         return (
 
-            <div className="my-10 grid grid-cols-1 justify-items-center">
-                <div>
-                    <p className="font-bold text-4xl">
+            <div className="my-6 px-4 md:my-10 grid grid-cols-1 justify-items-center">
+                <div className="max-w-full">
+                    <p className="font-bold text-3xl sm:text-4xl">
                         অ্যাকাউন্ট তৈরি করুন
                     </p>
                     <p className="text-slate-400 mb-8">
                         বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
                     </p>
                 </div>
-                <div className="bg-white p-6 rounded-lg">
-                    <Form className="flex w-96 flex-col gap-4" onSubmit={buttonSubmitHandler}>
+                <div className="bg-white p-4 sm:p-6 rounded-lg w-full sm:w-auto max-w-full">
+                    <Form className="flex w-full sm:w-96 flex-col gap-4" onSubmit={buttonSubmitHandler}>
                         <TextField
                             isRequired
                             name="name"
@@ -92,16 +92,16 @@ export default function SignUpPage() {
                                     return "কমপক্ষে ৮ অক্ষর বিশিষ্ট হতে হবে";
                                 }
                                 if (!/[A-Z]/.test(value)) {
-                                    return "কমপক্ষে ১ টি বড় হাতের অক্ষর থাকতে হবে";
+                                    return "কমপক্ষে ১ টি বড় হাতের অক্ষর থাকতে হবে";
                                 }
                                 if (!/[0-9]/.test(value)) {
-                                    return "পাসওয়ার্ডে কমপক্ষে ১ টি সংখ্যা থাকতে হবে";
+                                    return "পাসওয়ার্ডে কমপক্ষে ১ টি সংখ্যা থাকতে হবে";
                                 }
 
                                 return null;
                             }}
                         >
-                            <Label>পাসওয়ার্ড</Label>
+                            <Label>পাসওয়ার্ড</Label>
                             <Input placeholder="কমপক্ষে ৮ অক্ষর" />
                             <FieldError />
                         </TextField>
@@ -126,7 +126,7 @@ export default function SignUpPage() {
                                 return null;
                             }}
                         >
-                            <Label>পাসওয়ার্ড নিশ্চিত করুন</Label>
+                            <Label>পাসওয়ার্ড নিশ্চিত করুন</Label>
                             <Input placeholder="আবার লিখুন" />
                             <FieldError />
                         </TextField>
@@ -142,11 +142,11 @@ export default function SignUpPage() {
                         <div className="divider">অথবা</div>
                     </div>
 
-                    <div className="flex justify-evenly">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:gap-0 sm:justify-evenly">
                         <Button onClick={handleGoogleSignIn} className="bg-[#cdc6c6] text-black " >Google দিয়ে চালিয়ে যান</Button>
                         <Button onClick={handleGithubSignIn} className="bg-[#f7d1d1] text-black">GitHub দিয়ে চালিয়ে যান</Button>
                     </div>
-                    <div className="flex justify-center pt-4 gap-4">
+                    <div className="flex flex-wrap justify-center pt-4 gap-2 sm:gap-4">
                         <span>অ্যাকাউন্ট আছে?</span>  <Link href="/sign-in" className="hover:underline hover:text-blue-500">সাইন ইন করুন</Link>
                     </div>
                 </div>

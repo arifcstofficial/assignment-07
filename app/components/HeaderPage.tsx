@@ -13,29 +13,29 @@ const HeaderPage = () => {
     }
     const { data: session } = useSession();
     return (
-        <div className="flex justify-between p-2 md:p-3 lg:p-4">
-            <div className="flex gap-2">
-                <div>
-                    <Link href="/"><Image src="/logo.png" alt="logo image" width={500} height={500} className="w-10 h-auto md:w-12 lg:w-[50px]" /></Link>
+        <div className="flex justify-between items-center gap-2 p-2 md:p-3 lg:p-4">
+            <div className="flex gap-2 min-w-0">
+                <div className="shrink-0">
+                    <Link href="/"><Image src="/logo.png" alt="logo image" width={512} height={512} className="w-10 h-auto md:w-12 lg:w-[50px]" /></Link>
                 </div>
-                <div>
+                <div className="min-w-0">
                     <div className="font-bold text-base md:text-lg lg:text-xl ">
                         বাজার দর
                     </div>
-                    <div className="text-sm">
+                    <div className="text-xs sm:text-sm">
                         <CurrentTimePage></CurrentTimePage>
                     </div>
                 </div>
 
             </div>
 
-            <div>
-                <div className="flex sm:gap-2 md:gap-3 lg:gap-4 justify-center items-center">
+            <div className="shrink-0">
+                <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 justify-center items-center">
 
                     {
                         session ? <div className="flex justify-center items-center">
                             <Dropdown>
-                                <Button aria-label="Menu" variant="secondary">
+                                <Button aria-label="Menu" variant="secondary" className="max-w-32 truncate sm:max-w-none">
                                     {session.user.name}▼
                                 </Button>
                                 <Dropdown.Popover>
@@ -52,9 +52,9 @@ const HeaderPage = () => {
                             </Dropdown>
 
                         </div>
-                            : <div>
-                                <Link href="/sign-in" className='btn btn-primary bg-transparent text-blue-500'>সাইন ইন</Link>
-                                <Link href="/sign-up" className="btn bg-green-500 text-white">সাইন আপ</Link>
+                            : <div className="flex gap-1 sm:gap-2">
+                                <Link href="/sign-in" className='btn btn-primary bg-transparent text-blue-500 btn-sm sm:btn-md'>সাইন ইন</Link>
+                                <Link href="/sign-up" className="btn bg-green-500 text-white btn-sm sm:btn-md">সাইন আপ</Link>
                             </div>
                     }
 

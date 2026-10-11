@@ -12,7 +12,7 @@ const AveragePricePage = ({ data }: AveragePricePageProps) => {
     const average = ((lowest + highest) / 2);
     return (
         <div>
-            <p className='text-green-700 text-4xl font-bold'>{average.toLocaleString("bn-BD",{ maximumFractionDigits: 2 })}<span className="text-xl"> টাকা </span> </p>
+            <p className='text-green-700 text-3xl sm:text-4xl font-bold'>{average.toLocaleString("bn-BD",{ maximumFractionDigits: 2 })}<span className="text-lg sm:text-xl"> টাকা </span> </p>
             <p>প্রতি কেজি-এর হিসেবে</p>
         </div>
     );
