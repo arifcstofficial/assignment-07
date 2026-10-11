@@ -1,4 +1,5 @@
-import { requireSession } from '@/app/lib/session';
+import  AsecendingDescendingPage  from '@/app/components/AsecendingDescending';
+
 import { ProductDetailsType } from '@/app/types/ProductDetailsType';
 import React, { Suspense } from 'react';
 
@@ -67,7 +68,7 @@ function ShowCard({ item }: { item: ProductDetailsType }) {
 }
 
 async function ProductContents({ params }: { params: Promise<{ category: string }> }) {
-     await requireSession(); 
+
     const { category } = await params;
 
     const resData = await fetch(
@@ -89,22 +90,30 @@ async function ProductContents({ params }: { params: Promise<{ category: string 
 
     return (
         <div className="px-6">
-            <div className="mt-8 flex items-center gap-4 rounded-3xl bg-white p-8">
-                <span className="text-4xl">{first.categoryIcon}</span>
-                <div>
-                    <p className="text-xl font-bold">{first.categoryNameBn}</p>
-                    <p>{count}টি পণ্যের আজকের দাম ও পরিবর্তন</p>
+            <div className="mt-8 flex justify-end items-center gap-4 rounded-3xl bg-white p-8">
+                <div className="flex items-center gap-3"> 
+                    <p>সাজান</p>
+                    <div><AsecendingDescendingPage data={data}></AsecendingDescendingPage>
+                     
+                    </div>
                 </div>
             </div>
 
-            <p className="my-4">মোট {count}টি পণ্য দেখানো হচ্ছে</p>
+            <div className="px-6">
+                <div className="mt-8 flex items-center gap-4 rounded-3xl bg-white p-8">
+                    <span className="text-4xl">{first.categoryIcon}</span>
+                    <div>
+                        <p className="text-xl font-bold">{first.categoryNameBn}</p>
+                        <p>{count}টি পণ্যের আজকের দাম ও পরিবর্তন</p>
+                    </div>
+                </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {data.map((item) => (
-                    <ShowCard key={item.id} item={item} />
-                ))}
+                <p className="my-4">মোট {count}টি পণ্য দেখানো হচ্ছে</p>
+
+               
             </div>
         </div>
+
     );
 }
 
